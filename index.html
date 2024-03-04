@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Random number generator
+
+        var a = Math.floor(Math.random() * 1000);
+        var b = a.toString();
+        var c = "Randomly generated number: ";
+        var text = c.concat(b);
+        document.write(text + "</br>" + "</br>");
+
+
+        //Breakdown Logic
+
+        var ones = b.charAt(2);
+        var tens = b.charAt(1) + "0";
+        var hundreds = b.charAt(0) + "00";
+
+        if (a<=9) {
+
+            var ones = b.charAt(0);
+
+            document.write("Breakdown: " + ones + "</br>" + "</br>");
+            
+        } else if (a<=99) {
+
+            var ones = b.charAt(1);
+            var tens = b.charAt(0) + "0";
+
+            if (ones==0) {
+                document.write("Breakdown: " + tens + "</br>" + "</br>");
+                
+            } else {
+                document.write("Breakdown: " + tens + ", " + ones + "</br>" + "</br>");
+
+            }
+            
+        } else {
+
+            var ones = b.charAt(2);
+            var tens = b.charAt(1) + "0";
+            var hundreds = b.charAt(0) + "00";
+
+            if (ones==0) {
+                document.write("Breakdown: " + hundreds + ", " + tens + "</br>" + "</br>");
+                
+            } else if (tens==0) {
+                document.write("Breakdown: " + hundreds + ", " + ones + "</br>" + "</br>");
+                
+            } else if (ones==0 && tens==0) {
+                document.write("Breakdown: " + hundreds + "</br>" + "</br>");
+                
+            } else {
+                document.write("Breakdown: " + hundreds + ", " + tens + ", " + ones + "</br>" + "</br>");
+
+            }
+        }
+
+
+        //Date
+
+        var dateofprint = new Date();
+        document.write("Date of Print: " + dateofprint);
+
+    </script>
+</body>
+</html>
